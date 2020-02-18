@@ -6,7 +6,7 @@ import iransystem
 codecs.register(lambda e: iransystem.getregentry())
 ```
 
-You may need to reverse decoded characters. for example:
+You may need to reverse decoded strings. for example:
 
 ```python
 import codecs
