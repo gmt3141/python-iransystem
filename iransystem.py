@@ -34,11 +34,13 @@ class Codec(codecs.Codec):
 
 
 class IncrementalEncoder(codecs.IncrementalEncoder):
+
     def encode(self, input, final=False):
         return codecs.charmap_encode(input, self.errors, encoding_table)[0]
 
 
 class IncrementalDecoder(codecs.IncrementalDecoder):
+
     def decode(self, input, final=False):
         return codecs.charmap_decode(input, self.errors,decoding_table)[0]
 
@@ -210,41 +212,41 @@ decoding_table = (
     '\u060c'   #  0x8a -> ARABIC COMMA
     '\u0640'   #  0x8b -> ARABIC TATWEEL
     '\u061f'   #  0x8c -> ARABIC QUESTION MARK
-    '\ufe81'   #  0x8d -> ARABIC LETTER ALEF WITH MADDA ABOVE ISOLATED FORM
-    '\ufe8b'   #  0x8e -> ARABIC LETTER YEH WITH HAMZA ABOVE INITIAL FORM
-    '\ufe80'   #  0x8f -> ARABIC LETTER HAMZA ISOLATED FORM
-    '\ufe8d'   #  0x90 -> ARABIC LETTER ALEF ISOLATED FORM
-    '\ufe8e'   #  0x91 -> ARABIC LETTER ALEF FINAL FORM
-    '\ufe8f'   #  0x92 -> ARABIC LETTER BEH ISOLATED FORM
-    '\ufe91'   #  0x93 -> ARABIC LETTER BEH INITIAL FORM
-    '\ufb56'   #  0x94 -> ARABIC LETTER PEH ISOLATED FORM
-    '\ufb58'   #  0x95 -> ARABIC LETTER PEH INITIAL FORM
-    '\ufe95'   #  0x96 -> ARABIC LETTER TEH ISOLATED FORM
-    '\ufe97'   #  0x97 -> ARABIC LETTER TEH INITIAL FORM
-    '\ufe99'   #  0x98 -> ARABIC LETTER THEH ISOLATED FORM
-    '\ufe9b'   #  0x99 -> ARABIC LETTER THEH INITIAL FORM
-    '\ufe9d'   #  0x9a -> ARABIC LETTER JEEM ISOLATED FORM
-    '\ufe9f'   #  0x9b -> ARABIC LETTER JEEM INITIAL FORM
-    '\ufb7a'   #  0x9c -> ARABIC LETTER TCHEH ISOLATED FORM
-    '\ufb7c'   #  0x9d -> ARABIC LETTER TCHEH INITIAL FORM
-    '\ufea1'   #  0x9e -> ARABIC LETTER HAH ISOLATED FORM
-    '\ufea3'   #  0x9f -> ARABIC LETTER HAH INITIAL FORM
-    '\ufea5'   #  0xa0 -> ARABIC LETTER KHAH ISOLATED FORM
-    '\ufea7'   #  0xa1 -> ARABIC LETTER KHAH INITIAL FORM
-    '\ufea9'   #  0xa2 -> ARABIC LETTER DAL ISOLATED FORM
-    '\ufeab'   #  0xa3 -> ARABIC LETTER THAL ISOLATED FORM
-    '\ufead'   #  0xa4 -> ARABIC LETTER REH ISOLATED FORM
-    '\ufeaf'   #  0xa5 -> ARABIC LETTER ZAIN ISOLATED FORM
-    '\ufb8a'   #  0xa6 -> ARABIC LETTER JEH ISOLATED FORM
-    '\ufeb1'   #  0xa7 -> ARABIC LETTER SEEN ISOLATED FORM
-    '\ufeb3'   #  0xa8 -> ARABIC LETTER SEEN INITIAL FORM
-    '\ufeb5'   #  0xa9 -> ARABIC LETTER SHEEN ISOLATED FORM
-    '\ufeb7'   #  0xaa -> ARABIC LETTER SHEEN INITIAL FORM
-    '\ufeb9'   #  0xab -> ARABIC LETTER SAD ISOLATED FORM
-    '\ufebb'   #  0xac -> ARABIC LETTER SAD INITIAL FORM
-    '\ufebd'   #  0xad -> ARABIC LETTER DAD ISOLATED FORM
-    '\ufebf'   #  0xae -> ARABIC LETTER DAD INITIAL FORM
-    '\ufec1'   #  0xaf -> ARABIC LETTER TAH ISOLATED FORM
+    '\u0622'   #  0x8d -> ARABIC LETTER ALEF WITH MADDA ABOVE
+    '\u0626'   #  0x8e -> ARABIC LETTER YEH WITH HAMZA ABOVE
+    '\u0621'   #  0x8f -> ARABIC LETTER HAMZA
+    '\u0627'   #  0x90 -> ARABIC LETTER ALEF
+    '\u0627'   #  0x91 -> ARABIC LETTER ALEF
+    '\u0628'   #  0x92 -> ARABIC LETTER BEH
+    '\u0628'   #  0x93 -> ARABIC LETTER BEH
+    '\u067e'   #  0x94 -> ARABIC LETTER PEH
+    '\u067e'   #  0x95 -> ARABIC LETTER PEH
+    '\u062a'   #  0x96 -> ARABIC LETTER TEH
+    '\u062a'   #  0x97 -> ARABIC LETTER TEH
+    '\u062b'   #  0x98 -> ARABIC LETTER THEH
+    '\u062b'   #  0x99 -> ARABIC LETTER THEH
+    '\u062c'   #  0x9a -> ARABIC LETTER JEEM
+    '\u062c'   #  0x9b -> ARABIC LETTER JEEM
+    '\u0686'   #  0x9c -> ARABIC LETTER TCHEH
+    '\u0686'   #  0x9d -> ARABIC LETTER TCHEH
+    '\u062d'   #  0x9e -> ARABIC LETTER HAH
+    '\u062d'   #  0x9f -> ARABIC LETTER HAH
+    '\u062e'   #  0xa0 -> ARABIC LETTER KHAH
+    '\u062e'   #  0xa1 -> ARABIC LETTER KHAH
+    '\u062f'   #  0xa2 -> ARABIC LETTER DAL
+    '\u0630'   #  0xa3 -> ARABIC LETTER THAL
+    '\u0631'   #  0xa4 -> ARABIC LETTER REH
+    '\u0632'   #  0xa5 -> ARABIC LETTER ZAIN
+    '\u0698'   #  0xa6 -> ARABIC LETTER JEH
+    '\u0633'   #  0xa7 -> ARABIC LETTER SEEN
+    '\u0633'   #  0xa8 -> ARABIC LETTER SEEN
+    '\u0634'   #  0xa9 -> ARABIC LETTER SHEEN
+    '\u0634'   #  0xaa -> ARABIC LETTER SHEEN
+    '\u0635'   #  0xab -> ARABIC LETTER SAD
+    '\u0635'   #  0xac -> ARABIC LETTER SAD
+    '\u0636'   #  0xad -> ARABIC LETTER DAD
+    '\u0636'   #  0xae -> ARABIC LETTER DAD
+    '\u0637'   #  0xaf -> ARABIC LETTER TAH
     '\u2591'   #  0xb0 -> LIGHT SHADE
     '\u2592'   #  0xb1 -> MEDIUM SHADE
     '\u2593'   #  0xb2 -> DARK SHADE
@@ -293,37 +295,38 @@ decoding_table = (
     '\u258c'   #  0xdd -> LEFT HALF BLOCK
     '\u2590'   #  0xde -> RIGHT HALF BLOCK
     '\u2580'   #  0xdf -> UPPER HALF BLOCK
-    '\ufec5'   #  0xe0 -> ARABIC LETTER ZAH ISOLATED FORM
-    '\ufec9'   #  0xe1 -> ARABIC LETTER AIN ISOLATED FORM
-    '\ufeca'   #  0xe2 -> ARABIC LETTER AIN FINAL FORM
-    '\ufecc'   #  0xe3 -> ARABIC LETTER AIN MEDIAL FORM
-    '\ufecb'   #  0xe4 -> ARABIC LETTER AIN INITIAL FORM
-    '\ufecd'   #  0xe5 -> ARABIC LETTER GHAIN ISOLATED FORM
-    '\ufece'   #  0xe6 -> ARABIC LETTER GHAIN FINAL FORM
-    '\ufed0'   #  0xe7 -> ARABIC LETTER GHAIN MEDIAL FORM
-    '\ufecf'   #  0xe8 -> ARABIC LETTER GHAIN INITIAL FORM
-    '\ufed1'   #  0xe9 -> ARABIC LETTER FEH ISOLATED FORM
-    '\ufed3'   #  0xea -> ARABIC LETTER FEH INITIAL FORM
-    '\ufed5'   #  0xeb -> ARABIC LETTER QAF ISOLATED FORM
-    '\ufed7'   #  0xec -> ARABIC LETTER QAF INITIAL FORM
-    '\ufb8e'   #  0xed -> ARABIC LETTER KEHEH ISOLATED FORM
-    '\ufb90'   #  0xee -> ARABIC LETTER KEHEH INITIAL FORM
-    '\ufb92'   #  0xef -> ARABIC LETTER GAF ISOLATED FORM
-    '\ufb94'   #  0xf0 -> ARABIC LETTER GAF INITIAL FORM
-    '\ufedd'   #  0xf1 -> ARABIC LETTER LAM ISOLATED FORM
+    '\u0638'   #  0xe0 -> ARABIC LETTER ZAH
+    '\u0639'   #  0xe1 -> ARABIC LETTER AIN
+    '\u0639'   #  0xe2 -> ARABIC LETTER AIN
+    '\u0639'   #  0xe3 -> ARABIC LETTER AIN
+    '\u0639'   #  0xe4 -> ARABIC LETTER AIN
+    '\u063a'   #  0xe5 -> ARABIC LETTER GHAIN
+    '\u063a'   #  0xe6 -> ARABIC LETTER GHAIN
+    '\u063a'   #  0xe7 -> ARABIC LETTER GHAIN
+    '\u063a'   #  0xe8 -> ARABIC LETTER GHAIN
+    '\u0641'   #  0xe9 -> ARABIC LETTER FEH
+    '\u0641'   #  0xea -> ARABIC LETTER FEH
+    '\u0642'   #  0xeb -> ARABIC LETTER QAF
+    '\u0642'   #  0xec -> ARABIC LETTER QAF
+    '\u06a9'   #  0xed -> ARABIC LETTER KEHEH
+    '\u06a9'   #  0xee -> ARABIC LETTER KEHEH
+    '\u06af'   #  0xef -> ARABIC LETTER GAF
+    '\u06af'   #  0xf0 -> ARABIC LETTER GAF
+    '\u0644'   #  0xf1 -> ARABIC LETTER LAM
+    # this has problems in non-isolated forms!
     '\ufefb'   #  0xf2 -> ARABIC LIGATURE LAM WITH ALEF ISOLATED FORM
-    '\ufedf'   #  0xf3 -> ARABIC LETTER LAM INITIAL FORM
-    '\ufee1'   #  0xf4 -> ARABIC LETTER MEEM ISOLATED FORM
-    '\ufee3'   #  0xf5 -> ARABIC LETTER MEEM INITIAL FORM
-    '\ufee5'   #  0xf6 -> ARABIC LETTER NOON ISOLATED FORM
-    '\ufee7'   #  0xf7 -> ARABIC LETTER NOON INITIAL FORM
-    '\ufeed'   #  0xf8 -> ARABIC LETTER WAW ISOLATED FORM
-    '\ufee9'   #  0xf9 -> ARABIC LETTER HEH ISOLATED FORM
-    '\ufeec'   #  0xfa -> ARABIC LETTER HEH MEDIAL FORM
-    '\ufeeb'   #  0xfb -> ARABIC LETTER HEH INITIAL FORM
-    '\ufbfd'   #  0xfc -> ARABIC LETTER FARSI YEH FINAL FORM
-    '\ufbfc'   #  0xfd -> ARABIC LETTER FARSI YEH ISOLATED FORM
-    '\ufbfe'   #  0xfe -> ARABIC LETTER FARSI YEH INITIAL FORM
+    '\u0644'   #  0xf3 -> ARABIC LETTER LAM
+    '\u0645'   #  0xf4 -> ARABIC LETTER MEEM
+    '\u0645'   #  0xf5 -> ARABIC LETTER MEEM
+    '\u0646'   #  0xf6 -> ARABIC LETTER NOON
+    '\u0646'   #  0xf7 -> ARABIC LETTER NOON
+    '\u0648'   #  0xf8 -> ARABIC LETTER WAW
+    '\u0647'   #  0xf9 -> ARABIC LETTER HEH
+    '\u0647'   #  0xfa -> ARABIC LETTER HEH
+    '\u0647'   #  0xfb -> ARABIC LETTER HEH
+    '\u06cc'   #  0xfc -> ARABIC LETTER FARSI YEH
+    '\u06cc'   #  0xfd -> ARABIC LETTER FARSI YEH
+    '\u06cc'   #  0xfe -> ARABIC LETTER FARSI YEH
     '\xa0'     #  0xff -> NO-BREAK SPACE
 )
 
