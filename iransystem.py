@@ -32,16 +32,20 @@ class Codec(codecs.Codec):
     def decode(self, input, errors='strict'):
         return codecs.charmap_decode(input, errors, decoding_table)
 
+
 class IncrementalEncoder(codecs.IncrementalEncoder):
     def encode(self, input, final=False):
         return codecs.charmap_encode(input, self.errors, encoding_table)[0]
+
 
 class IncrementalDecoder(codecs.IncrementalDecoder):
     def decode(self, input, final=False):
         return codecs.charmap_decode(input, self.errors,decoding_table)[0]
 
+
 class StreamWriter(Codec, codecs.StreamWriter):
     pass
+
 
 class StreamReader(Codec, codecs.StreamReader):
     pass
@@ -58,7 +62,6 @@ def getregentry():
         streamreader       = StreamReader,
         streamwriter       = StreamWriter
     )
-
 
 ### Decoding Table
 
@@ -194,7 +197,6 @@ decoding_table = (
     '}'        #  0x7D -> RIGHT CURLY BRACKET
     '~'        #  0x7E -> TILDE
     '\x7f'     #  0x7F -> DELETE
-
     '\u06f0'   #  0x80 -> EXTENDED ARABIC-INDIC DIGIT ZERO
     '\u06f1'   #  0x81 -> EXTENDED ARABIC-INDIC DIGIT ONE
     '\u06f2'   #  0x82 -> EXTENDED ARABIC-INDIC DIGIT TWO
@@ -211,7 +213,6 @@ decoding_table = (
     '\ufe81'   #  0x8d -> ARABIC LETTER ALEF WITH MADDA ABOVE ISOLATED FORM
     '\ufe8b'   #  0x8e -> ARABIC LETTER YEH WITH HAMZA ABOVE INITIAL FORM
     '\ufe80'   #  0x8f -> ARABIC LETTER HAMZA ISOLATED FORM
-
     '\ufe8d'   #  0x90 -> ARABIC LETTER ALEF ISOLATED FORM
     '\ufe8e'   #  0x91 -> ARABIC LETTER ALEF FINAL FORM
     '\ufe8f'   #  0x92 -> ARABIC LETTER BEH ISOLATED FORM
@@ -228,7 +229,6 @@ decoding_table = (
     '\ufb7c'   #  0x9d -> ARABIC LETTER TCHEH INITIAL FORM
     '\ufea1'   #  0x9e -> ARABIC LETTER HAH ISOLATED FORM
     '\ufea3'   #  0x9f -> ARABIC LETTER HAH INITIAL FORM
-
     '\ufea5'   #  0xa0 -> ARABIC LETTER KHAH ISOLATED FORM
     '\ufea7'   #  0xa1 -> ARABIC LETTER KHAH INITIAL FORM
     '\ufea9'   #  0xa2 -> ARABIC LETTER DAL ISOLATED FORM
@@ -245,7 +245,6 @@ decoding_table = (
     '\ufebd'   #  0xad -> ARABIC LETTER DAD ISOLATED FORM
     '\ufebf'   #  0xae -> ARABIC LETTER DAD INITIAL FORM
     '\ufec1'   #  0xaf -> ARABIC LETTER TAH ISOLATED FORM
-
     '\u2591'   #  0xb0 -> LIGHT SHADE
     '\u2592'   #  0xb1 -> MEDIUM SHADE
     '\u2593'   #  0xb2 -> DARK SHADE
@@ -262,7 +261,6 @@ decoding_table = (
     '\u255c'   #  0xbd -> BOX DRAWINGS UP DOUBLE AND LEFT SINGLE
     '\u255b'   #  0xbe -> BOX DRAWINGS UP SINGLE AND LEFT DOUBLE
     '\u2510'   #  0xbf -> BOX DRAWINGS LIGHT DOWN AND LEFT
-
     '\u2514'   #  0xc0 -> BOX DRAWINGS LIGHT UP AND RIGHT
     '\u2534'   #  0xc1 -> BOX DRAWINGS LIGHT UP AND HORIZONTAL
     '\u252c'   #  0xc2 -> BOX DRAWINGS LIGHT DOWN AND HORIZONTAL
@@ -279,7 +277,6 @@ decoding_table = (
     '\u2550'   #  0xcd -> BOX DRAWINGS DOUBLE HORIZONTAL
     '\u256c'   #  0xce -> BOX DRAWINGS DOUBLE VERTICAL AND HORIZONTAL
     '\u2567'   #  0xcf -> BOX DRAWINGS UP SINGLE AND HORIZONTAL DOUBLE
-
     '\u2568'   #  0xd0 -> BOX DRAWINGS UP DOUBLE AND HORIZONTAL SINGLE
     '\u2564'   #  0xd1 -> BOX DRAWINGS DOWN SINGLE AND HORIZONTAL DOUBLE
     '\u2565'   #  0xd2 -> BOX DRAWINGS DOWN DOUBLE AND HORIZONTAL SINGLE
@@ -296,7 +293,6 @@ decoding_table = (
     '\u258c'   #  0xdd -> LEFT HALF BLOCK
     '\u2590'   #  0xde -> RIGHT HALF BLOCK
     '\u2580'   #  0xdf -> UPPER HALF BLOCK
-
     '\ufec5'   #  0xe0 -> ARABIC LETTER ZAH ISOLATED FORM
     '\ufec9'   #  0xe1 -> ARABIC LETTER AIN ISOLATED FORM
     '\ufeca'   #  0xe2 -> ARABIC LETTER AIN FINAL FORM
@@ -313,7 +309,6 @@ decoding_table = (
     '\ufb8e'   #  0xed -> ARABIC LETTER KEHEH ISOLATED FORM
     '\ufb90'   #  0xee -> ARABIC LETTER KEHEH INITIAL FORM
     '\ufb92'   #  0xef -> ARABIC LETTER GAF ISOLATED FORM
-
     '\ufb94'   #  0xf0 -> ARABIC LETTER GAF INITIAL FORM
     '\ufedd'   #  0xf1 -> ARABIC LETTER LAM ISOLATED FORM
     '\ufefb'   #  0xf2 -> ARABIC LIGATURE LAM WITH ALEF ISOLATED FORM
@@ -330,7 +325,6 @@ decoding_table = (
     '\ufbfc'   #  0xfd -> ARABIC LETTER FARSI YEH ISOLATED FORM
     '\ufbfe'   #  0xfe -> ARABIC LETTER FARSI YEH INITIAL FORM
     '\xa0'     #  0xff -> NO-BREAK SPACE
-
 )
 
 ### Encoding table
