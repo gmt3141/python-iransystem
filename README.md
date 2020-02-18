@@ -58,7 +58,7 @@ for record in table:
 ## Problems
 
 ### Problem with arabic ligature LAM with ALEF «ﻻ»
-Reading IranSystem encoded streams works perfectly, but all «ﻻ» (\ufefb) characters shown in isolated form. You can replace it with two character sequence LAM + ALEF (\u0644\u0627). For example you can replace `reverse` function with:
+Reading IranSystem encoded streams works perfectly, but all «ﻻ» (`\ufefb`) characters shown in isolated form. You can replace it with two character sequence LAM + ALEF (`\u0644\u0627`). For example you can replace `reverse` function with:
 ```python
 def iransystem_postproc(s):
     return s[::-1].replace('\ufefb', '\u0644\u0627')
