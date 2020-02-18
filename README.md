@@ -18,7 +18,7 @@ def reverse(s):
 
 codecs.register(lambda e: iransystem.getregentry())
 
-# Read Iranian Tamin Ejtema'ee Paradox DBF file
+# Read an Iranian Tamin Ejtema-ee's Paradox DBF file
 table = dbfread.DBF('DSKWOR00.dbf', encoding='iransystem')
 
 for record in table:
